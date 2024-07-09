@@ -1,6 +1,7 @@
 import { Component } from '@angular/core';
 import { IProduct } from './product.model';
 import { provideClientHydration } from '@angular/platform-browser';
+import { CartService } from '../cart.service';
 
 
 @Component({
@@ -12,7 +13,7 @@ export class CatalogComponent {
   products: any;
   filter: string = '';
 
-  constructor() {
+  constructor(private cartSvc: CartService) {
     this.products = [
       {
         id: 1,
@@ -191,6 +192,7 @@ export class CatalogComponent {
   }
 
   addToCart(product: IProduct) {
+    this.cartSvc.add(product);
   }
 
   getDiscountedClasses(product: IProduct) {
