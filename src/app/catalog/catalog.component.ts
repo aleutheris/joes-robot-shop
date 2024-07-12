@@ -1,7 +1,7 @@
 import { Component } from '@angular/core';
 import { IProduct } from './product.model';
 import { provideClientHydration } from '@angular/platform-browser';
-import { CartService } from '../cart.service';
+import { CartService } from 'src/app/cart/cart.service';
 import { ProductService } from './product.service';
 
 
